@@ -1,5 +1,5 @@
 const Auth = Buffer.from(
-  process.env["INFURA_API_KEY"] + ":" + process.env["INFURA_API_SECRET"]
+  process.env["INFURA_API_KEY"] + ":" + process.env["INFURA_API_KEY_SECRET"]
 ).toString("base64");
 
 // The chain ID of the supported network
