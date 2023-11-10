@@ -19,9 +19,12 @@ export const GasCard = async () => {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {renderGasFeeEstimateCard(data?.low, "Low Gas Fee Estimate")}
-        {renderGasFeeEstimateCard(data?.medium, "Medium Gas Fee Estimate")}
-        {renderGasFeeEstimateCard(data?.high, "High Gas Fee Estimate")}
+        {data?.low &&
+          renderGasFeeEstimateCard(data.low, "Low Gas Fee Estimate")}
+        {data?.medium &&
+          renderGasFeeEstimateCard(data.medium, "Medium Gas Fee Estimate")}
+        {data?.high &&
+          renderGasFeeEstimateCard(data.high, "High Gas Fee Estimate")}
       </div>
       <div className="border px-8 py-4 rounded-xl space-y-4">
         <div>
