@@ -1,13 +1,10 @@
-import { getData } from "@/lib/getData";
+import { GasCard } from "@/components/GasCard";
 
 export default async function Home() {
-  const data = await getData();
-
-  const { suggestedMaxPriorityFeePerGas } = data.low;
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {suggestedMaxPriorityFeePerGas}
+    <main className="flex gap-4 min-h-screen flex-col items-center p-24">
+      <h1 className="text-3xl font-bold">Gas Card</h1>
+      <GasCard />
     </main>
   );
 }
