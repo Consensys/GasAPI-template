@@ -1,4 +1,5 @@
 import { getData } from "@/lib/getData";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const GasCard = async () => {
   const data = await getData();
@@ -7,13 +8,17 @@ export const GasCard = async () => {
     estimate: GasFeeEstimate,
     title: string
   ) => (
-    <div className="border px-4 py-2 rounded-xl space-y-2">
-      <h2 className="font-semibold">{title}</h2>
-      <p>Max Priority Fee: {estimate.suggestedMaxPriorityFeePerGas}</p>
-      <p>Max Fee Per Gas: {estimate.suggestedMaxFeePerGas}</p>
-      <p>Min Wait Time: {estimate.minWaitTimeEstimate} seconds</p>
-      <p>Max Wait Time: {estimate.maxWaitTimeEstimate} seconds</p>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p>Max Priority Fee: {estimate.suggestedMaxPriorityFeePerGas}</p>
+        <p>Max Fee Per Gas: {estimate.suggestedMaxFeePerGas}</p>
+        <p>Min Wait Time: {estimate.minWaitTimeEstimate} seconds</p>
+        <p>Max Wait Time: {estimate.maxWaitTimeEstimate} seconds</p>
+      </CardContent>
+    </Card>
   );
 
   return (
@@ -26,36 +31,24 @@ export const GasCard = async () => {
         {data?.high &&
           renderGasFeeEstimateCard(data.high, "High Gas Fee Estimate")}
       </div>
-      <div className="border px-8 py-4 rounded-xl space-y-4">
-        <div>
+      <Card>
+        <CardContent>
           <h2 className="font-semibold">Estimated Base Fee</h2>
           <p>Gas Price: {data?.estimatedBaseFee}</p>
-        </div>
-        <div>
           <h2 className="font-semibold">Network Congestion</h2>
           <p>{data?.networkCongestion}</p>
-        </div>
-        <div>
           <h2 className="font-semibold">Latest Priority Fee Range</h2>
           <p>{data?.latestPriorityFeeRange.join(" - ")}</p>
-        </div>
-        <div>
           <h2 className="font-semibold">Historical Priority Fee Range</h2>
           <p>{data?.historicalPriorityFeeRange.join(" - ")}</p>
-        </div>
-        <div>
           <h2 className="font-semibold">Historical Base Fee Range</h2>
           <p>{data?.historicalBaseFeeRange.join(" - ")}</p>
-        </div>
-        <div>
           <h2 className="font-semibold">Priority Fee Trend</h2>
           <p>{data?.priorityFeeTrend}</p>
-        </div>
-        <div>
           <h2 className="font-semibold">Base Fee Trend</h2>
           <p>{data?.baseFeeTrend}</p>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };
