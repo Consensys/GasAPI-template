@@ -1,13 +1,15 @@
 
 [![Gas API tutorial image 1](https://img.youtube.com/vi/74clgGR6rok/0.jpg)](https://www.youtube.com/watch?v=74clgGR6rok)
 
-In this tutorial, we will learn how to build a Gas Tracker App using the Gas API, Next.js, and ShadcnUI. This application will enable dapp users to access recommended gas prices tailored to their transaction priorities, assisting in ensuring efficient inclusion of these transactions in a blockchain block
+In this tutorial, we will learn how to build a Gas Tracker App using the Gas API, Next.js, and ShadcnUI. This application will enable dapp users to access recommended gas prices tailored to their transaction priority. Watch the YouTube video above for a brief introduction to the Gas API. 
 
-![Gas API tutorial image 1](https://images.ctfassets.net/9sy2a0egs6zh/4rVsrBM5eUvgT2b68DIQdA/e30bade0c4aa0cc62f409b623eb3596f/image3.png)
-
+Understanding Gas Prices
+--------------------
 'Gas' refers to a unit that measures the amount of computational effort required to execute operations, such as making transactions or running smart contracts. It's akin to fuel for a car -- necessary for the network to process and validate operations. Each transaction on Ethereum requires a specific amount of gas, determined by its complexity. Users set a gas price in Gwei (1 Gwei = 1 billionth of an Ether), representing the amount of Ether they are willing to pay per unit of gas.
 
 Understanding gas prices is crucial in blockchain networks, as it helps users manage the cost of their transactions. Knowledge of current gas prices enables users to select the most economical time to initiate a transaction and determine its speed. Awareness of gas prices is also vital to prevent failed transactions, plan budgets, understand network congestion, and make informed investment decisions.
+
+![Gas API tutorial image 1](https://images.ctfassets.net/9sy2a0egs6zh/4rVsrBM5eUvgT2b68DIQdA/e30bade0c4aa0cc62f409b623eb3596f/image3.png)
 
 The MetaMask Gas API
 --------------------
